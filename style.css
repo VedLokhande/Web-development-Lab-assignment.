@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #2f4fb5;
+    font-family: "Nunito", Arial, sans-serif;
+    color: #23283b;
+}
+
+/* page heading */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0 0 6px;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.header p {
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* two columns on big screens, one column on small */
+.layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.box {
+    background-color: #fffdf7;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.box h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+}
+
+/* form */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px 12px;
+    margin-bottom: 16px;
+    border: 2px solid #d8dbe8;
+    border-radius: 8px;
+    background-color: white;
+    font-family: inherit;
+    font-size: 15px;
+    color: inherit;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #2f4fb5;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 40px;
+    background-color: #ffd23f;
+    color: #23283b;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #ffc107;
+    transform: translateY(-2px);
+}
+
+.btn:focus-visible, .delete:focus-visible {
+    outline: 3px solid #2f4fb5;
+    outline-offset: 2px;
+}
+
+#error {
+    margin: 12px 0 0;
+    min-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #d62839;
+}
+
+/* total */
+.total-area {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #23283b;
+}
+
+.total-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5b6078;
+}
+
+.total-number {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+/* list header + filter */
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.top-row h2 {
+    margin: 0;
+}
+
+.top-row select {
+    width: auto;
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+/* expense rows */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 8px;
+    border-bottom: 1px dashed #c9cde0;
+    border-radius: 6px;
+}
+
+li:hover {
+    background-color: #f1f3fb;
+}
+
+li strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 800;
+}
+
+.delete {
+    padding: 5px 10px;
+    border: 2px solid #e4b9bd;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #d62839;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete:hover {
+    background-color: #d62839;
+    border-color: #d62839;
+    color: white;
+}
+
+.empty {
+    display: block;
+    padding: 30px 0;
+    text-align: center;
+    color: #7a7f96;
+    border-bottom: none;
+}
+
+.empty:hover {
+    background-color: transparent;
+}
+
+/* category tags */
+.tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.Food      { background-color: #ffe5cc; color: #9a4a00; }
+.Travel    { background-color: #cdf1ec; color: #0d6b5f; }
+.Shopping  { background-color: #fcdbe8; color: #a3175a; }
+.Education { background-color: #e3dcfa; color: #4b32a8; }
+.Other     { background-color: #e6e8ee; color: #484d63; }
+
+/* phones */
+@media (max-width: 750px) {
+    body {
+        padding: 24px 14px;
+    }
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .header h1 {
+        font-size: 26px;
+    }
+    .total-number {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 420px) {
+    .top-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .right {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+}
